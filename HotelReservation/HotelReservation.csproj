@@ -77,6 +77,36 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CamereUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\CamereUserControl.Designer.cs">
+      <DependentUpon>CamereUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientiUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientiUserControl.Designer.cs">
+      <DependentUpon>ClientiUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RezervariUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\RezervariUserControl.Designer.cs">
+      <DependentUpon>RezervariUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HartaUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\HartaUserControl.Designer.cs">
+      <DependentUpon>HartaUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RapoarteUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\RapoarteUserControl.Designer.cs">
+      <DependentUpon>RapoarteUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Camera.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Rezervare.cs" />
@@ -86,6 +116,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CamereUserControl.resx">
+      <DependentUpon>CamereUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientiUserControl.resx">
+      <DependentUpon>ClientiUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RezervariUserControl.resx">
+      <DependentUpon>RezervariUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HartaUserControl.resx">
+      <DependentUpon>HartaUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RapoarteUserControl.resx">
+      <DependentUpon>RapoarteUserControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
