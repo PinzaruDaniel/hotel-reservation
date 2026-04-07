@@ -9,6 +9,7 @@ namespace HotelReservation.Forms
     {
         private ClientiRepository _clientiRepo;
         private Action _refreshRezervariCombos;
+        private bool _isConfigured;
         private int _selectedClientId;
 
         public ClientiUserControl()
@@ -23,8 +24,11 @@ namespace HotelReservation.Forms
 
         public void Configure(ClientiRepository clientiRepo, Action refreshRezervariCombos)
         {
+            if (_isConfigured) return;
+            if (clientiRepo == null) throw new ArgumentNullException(nameof(clientiRepo));
             _clientiRepo = clientiRepo;
             _refreshRezervariCombos = refreshRezervariCombos;
+            _isConfigured = true;
         }
 
         public void LoadData() => LoadClienti();

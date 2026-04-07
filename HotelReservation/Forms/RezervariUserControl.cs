@@ -10,6 +10,7 @@ namespace HotelReservation.Forms
         private CamereRepository _camereRepo;
         private ClientiRepository _clientiRepo;
         private RezervariRepository _rezervariRepo;
+        private bool _isConfigured;
         private int _selectedRezervareId;
 
         public RezervariUserControl()
@@ -24,9 +25,14 @@ namespace HotelReservation.Forms
 
         public void Configure(CamereRepository camereRepo, ClientiRepository clientiRepo, RezervariRepository rezervariRepo)
         {
+            if (_isConfigured) return;
+            if (camereRepo == null) throw new ArgumentNullException(nameof(camereRepo));
+            if (clientiRepo == null) throw new ArgumentNullException(nameof(clientiRepo));
+            if (rezervariRepo == null) throw new ArgumentNullException(nameof(rezervariRepo));
             _camereRepo = camereRepo;
             _clientiRepo = clientiRepo;
             _rezervariRepo = rezervariRepo;
+            _isConfigured = true;
         }
 
         public void LoadData() => LoadRezervari();

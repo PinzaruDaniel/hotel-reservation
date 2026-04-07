@@ -12,6 +12,7 @@ namespace HotelReservation.Forms
     public partial class RapoarteUserControl : UserControl
     {
         private RezervariRepository _rezervariRepo;
+        private bool _isConfigured;
         private List<Rezervare> _lastRaportData = new List<Rezervare>();
 
         public RapoarteUserControl()
@@ -26,7 +27,10 @@ namespace HotelReservation.Forms
 
         public void Configure(RezervariRepository rezervariRepo)
         {
+            if (_isConfigured) return;
+            if (rezervariRepo == null) throw new ArgumentNullException(nameof(rezervariRepo));
             _rezervariRepo = rezervariRepo;
+            _isConfigured = true;
         }
 
         private void btnGeneraRaport_Click(object sender, EventArgs e)

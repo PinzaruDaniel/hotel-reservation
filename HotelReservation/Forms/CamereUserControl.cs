@@ -9,6 +9,7 @@ namespace HotelReservation.Forms
     {
         private CamereRepository _camereRepo;
         private Action _refreshRezervariCombos;
+        private bool _isConfigured;
         private int _selectedCameraId;
 
         public CamereUserControl()
@@ -23,8 +24,11 @@ namespace HotelReservation.Forms
 
         public void Configure(CamereRepository camereRepo, Action refreshRezervariCombos)
         {
+            if (_isConfigured) return;
+            if (camereRepo == null) throw new ArgumentNullException(nameof(camereRepo));
             _camereRepo = camereRepo;
             _refreshRezervariCombos = refreshRezervariCombos;
+            _isConfigured = true;
         }
 
         public void LoadData() => LoadCamere();

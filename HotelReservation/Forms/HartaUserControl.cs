@@ -10,6 +10,7 @@ namespace HotelReservation.Forms
     public partial class HartaUserControl : UserControl
     {
         private CamereRepository _camereRepo;
+        private bool _isConfigured;
 
         public HartaUserControl()
         {
@@ -24,7 +25,10 @@ namespace HotelReservation.Forms
 
         public void Configure(CamereRepository camereRepo)
         {
+            if (_isConfigured) return;
+            if (camereRepo == null) throw new ArgumentNullException(nameof(camereRepo));
             _camereRepo = camereRepo;
+            _isConfigured = true;
         }
 
         public void LoadHarta() => LoadHartaCamere();
