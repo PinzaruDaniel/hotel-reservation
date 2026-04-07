@@ -7,17 +7,32 @@ namespace HotelReservation.Forms
 {
     public partial class RezervariUserControl : UserControl
     {
-        private readonly CamereRepository _camereRepo;
-        private readonly ClientiRepository _clientiRepo;
-        private readonly RezervariRepository _rezervariRepo;
+        private CamereRepository _camereRepo;
+        private ClientiRepository _clientiRepo;
+        private RezervariRepository _rezervariRepo;
+        private bool _isConfigured;
         private int _selectedRezervareId;
 
-        public RezervariUserControl(CamereRepository camereRepo, ClientiRepository clientiRepo, RezervariRepository rezervariRepo)
+        public RezervariUserControl()
         {
             InitializeComponent();
-            _camereRepo    = camereRepo;
-            _clientiRepo   = clientiRepo;
+        }
+
+        public RezervariUserControl(CamereRepository camereRepo, ClientiRepository clientiRepo, RezervariRepository rezervariRepo) : this()
+        {
+            Configure(camereRepo, clientiRepo, rezervariRepo);
+        }
+
+        public void Configure(CamereRepository camereRepo, ClientiRepository clientiRepo, RezervariRepository rezervariRepo)
+        {
+            if (_isConfigured) return;
+            if (camereRepo == null) throw new ArgumentNullException(nameof(camereRepo));
+            if (clientiRepo == null) throw new ArgumentNullException(nameof(clientiRepo));
+            if (rezervariRepo == null) throw new ArgumentNullException(nameof(rezervariRepo));
+            _camereRepo = camereRepo;
+            _clientiRepo = clientiRepo;
             _rezervariRepo = rezervariRepo;
+            _isConfigured = true;
         }
 
         public void LoadData() => LoadRezervari();
@@ -26,6 +41,7 @@ namespace HotelReservation.Forms
 
         private void LoadRezervari()
         {
+            if (_rezervariRepo == null) return;
             try
             {
                 LoadRezervariComboBoxes();
@@ -55,6 +71,7 @@ namespace HotelReservation.Forms
 
         private void LoadRezervariComboBoxes()
         {
+            if (_clientiRepo == null || _camereRepo == null) return;
             try
             {
                 var clienti = _clientiRepo.GetAll();

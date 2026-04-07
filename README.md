@@ -128,9 +128,18 @@ hotel-reservation/
 │   │   ├── ClientiRepository.cs            # CRUD clienti
 │   │   └── RezervariRepository.cs          # CRUD rezervari + verificare suprapunere
 │   ├── Forms/
-│   │   ├── MainForm.cs                     # Logica principala (event handlers)
-│   │   ├── MainForm.Designer.cs            # UI definit programatic (InitializeComponent)
-│   │   └── MainForm.resx                   # Resurse form
+│   │   ├── MainForm.cs                     # Shell principal + injectare dependențe în tab-uri
+│   │   ├── MainForm.Designer.cs            # Structura tab-urilor (editabilă vizual)
+│   │   ├── CamereUserControl.cs            # Logică tab Camere
+│   │   ├── CamereUserControl.Designer.cs   # UI tab Camere (editabil vizual)
+│   │   ├── ClientiUserControl.cs           # Logică tab Clienți
+│   │   ├── ClientiUserControl.Designer.cs  # UI tab Clienți (editabil vizual)
+│   │   ├── RezervariUserControl.cs         # Logică tab Rezervări
+│   │   ├── RezervariUserControl.Designer.cs# UI tab Rezervări (editabil vizual)
+│   │   ├── HartaUserControl.cs             # Logică tab Hartă
+│   │   ├── HartaUserControl.Designer.cs    # UI tab Hartă (editabil vizual)
+│   │   ├── RapoarteUserControl.cs          # Logică tab Rapoarte
+│   │   └── RapoarteUserControl.Designer.cs # UI tab Rapoarte (editabil vizual)
 │   └── Properties/
 │       ├── AssemblyInfo.cs
 │       └── Resources.resx

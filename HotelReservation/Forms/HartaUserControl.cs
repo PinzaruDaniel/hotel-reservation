@@ -9,13 +9,26 @@ namespace HotelReservation.Forms
 {
     public partial class HartaUserControl : UserControl
     {
-        private readonly CamereRepository _camereRepo;
+        private CamereRepository _camereRepo;
+        private bool _isConfigured;
 
-        public HartaUserControl(CamereRepository camereRepo)
+        public HartaUserControl()
         {
             InitializeComponent();
-            _camereRepo = camereRepo;
             BuildLegend();
+        }
+
+        public HartaUserControl(CamereRepository camereRepo) : this()
+        {
+            Configure(camereRepo);
+        }
+
+        public void Configure(CamereRepository camereRepo)
+        {
+            if (_isConfigured) return;
+            if (camereRepo == null) throw new ArgumentNullException(nameof(camereRepo));
+            _camereRepo = camereRepo;
+            _isConfigured = true;
         }
 
         public void LoadHarta() => LoadHartaCamere();
@@ -31,6 +44,7 @@ namespace HotelReservation.Forms
 
         private void LoadHartaCamere()
         {
+            if (_camereRepo == null) return;
             try
             {
                 flpHarta.Controls.Clear();

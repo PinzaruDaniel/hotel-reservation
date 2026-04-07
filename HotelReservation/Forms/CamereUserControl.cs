@@ -7,21 +7,35 @@ namespace HotelReservation.Forms
 {
     public partial class CamereUserControl : UserControl
     {
-        private readonly CamereRepository _camereRepo;
-        private readonly Action _refreshRezervariCombos;
+        private CamereRepository _camereRepo;
+        private Action _refreshRezervariCombos;
+        private bool _isConfigured;
         private int _selectedCameraId;
 
-        public CamereUserControl(CamereRepository camereRepo, Action refreshRezervariCombos)
+        public CamereUserControl()
         {
             InitializeComponent();
+        }
+
+        public CamereUserControl(CamereRepository camereRepo, Action refreshRezervariCombos) : this()
+        {
+            Configure(camereRepo, refreshRezervariCombos);
+        }
+
+        public void Configure(CamereRepository camereRepo, Action refreshRezervariCombos)
+        {
+            if (_isConfigured) return;
+            if (camereRepo == null) throw new ArgumentNullException(nameof(camereRepo));
             _camereRepo = camereRepo;
             _refreshRezervariCombos = refreshRezervariCombos;
+            _isConfigured = true;
         }
 
         public void LoadData() => LoadCamere();
 
         private void LoadCamere()
         {
+            if (_camereRepo == null) return;
             try
             {
                 var list = _camereRepo.GetAll();
