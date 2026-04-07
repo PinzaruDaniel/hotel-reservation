@@ -88,7 +88,7 @@ namespace HotelReservation.Forms
                 LoadRezervariComboBoxes();
                 ShowInfo("Camera ștearsă cu succes.");
             }
-            catch (Exception ex) { ShowError("Eroare la ștergere. Camera poate fi referenșiată de rezervări.", ex); }
+            catch (Exception ex) { ShowError("Eroare la ștergere. Camera poate fi referențiată de rezervări.", ex); }
         }
 
         private void btnRefreshCamere_Click(object sender, EventArgs e) => LoadCamere();

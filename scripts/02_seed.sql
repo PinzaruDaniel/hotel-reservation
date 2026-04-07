@@ -83,13 +83,11 @@ SELECT
   (SELECT client_id FROM clienti WHERE document_identitate = 'RO45678901'),
   (SELECT camera_id FROM camere  WHERE numar_camera = '303'),
   DATE_SUB(CURDATE(), INTERVAL 10 DAY), DATE_SUB(CURDATE(), INTERVAL 7 DAY),
-  'Finalizata', 1800.00
-FROM dual;
+  'Finalizata', 1800.00;
 
 INSERT INTO rezervari (client_id, camera_id, data_checkin, data_checkout, status_rezervare, pret_total)
 SELECT
   (SELECT client_id FROM clienti WHERE document_identitate = 'RO56789012'),
   (SELECT camera_id FROM camere  WHERE numar_camera = '202'),
   DATE_ADD(CURDATE(), INTERVAL 10 DAY), DATE_ADD(CURDATE(), INTERVAL 12 DAY),
-  'Confirmata', 340.00
-FROM dual;
+  'Confirmata', 340.00;

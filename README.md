@@ -50,7 +50,7 @@ mysql -u root -p < scripts/02_seed.sql
 **Scriptul `01_schema.sql`** creeaza:
 - Baza de date `hotel_reservation`
 - Tabelele: `camere`, `clienti`, `rezervari`
-- Constrangerile de integritate referentiala (FK)
+- Constrângerile de integritate referențială (FK)
 - Indecsi de performanta
 
 **Scriptul `02_seed.sql`** insereaza:
@@ -188,7 +188,7 @@ hotel-reservation/
 | Campuri obligatorii | Verificare inainte de orice INSERT/UPDATE |
 | Check-out > Check-in | Validare la adaugare/modificare rezervare |
 | Fara suprapunere | Query SQL verifica rezervarile Confirmate existente |
-| FK integritate | Constrângeri BD (nu poti sterge client cu rezervari) |
+| FK integritate | Constrângeri BD (nu poți șterge client cu rezervări) |
 
 ---
 

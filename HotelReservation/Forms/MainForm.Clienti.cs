@@ -87,7 +87,7 @@ namespace HotelReservation.Forms
                 LoadRezervariComboBoxes();
                 ShowInfo("Clientul a fost șters cu succes.");
             }
-            catch (Exception ex) { ShowError("Eroare la ștergere. Clientul poate fi referențiat de rezervări.", ex); }
+            catch (Exception ex) { ShowError("Eroare la ștergere. Clientul poate fi asociat unor rezervări.", ex); }
         }
 
         private void btnRefreshClienti_Click(object sender, EventArgs e) => LoadClienti();
