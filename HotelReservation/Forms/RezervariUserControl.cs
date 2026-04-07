@@ -7,16 +7,25 @@ namespace HotelReservation.Forms
 {
     public partial class RezervariUserControl : UserControl
     {
-        private readonly CamereRepository _camereRepo;
-        private readonly ClientiRepository _clientiRepo;
-        private readonly RezervariRepository _rezervariRepo;
+        private CamereRepository _camereRepo;
+        private ClientiRepository _clientiRepo;
+        private RezervariRepository _rezervariRepo;
         private int _selectedRezervareId;
 
-        public RezervariUserControl(CamereRepository camereRepo, ClientiRepository clientiRepo, RezervariRepository rezervariRepo)
+        public RezervariUserControl()
         {
             InitializeComponent();
-            _camereRepo    = camereRepo;
-            _clientiRepo   = clientiRepo;
+        }
+
+        public RezervariUserControl(CamereRepository camereRepo, ClientiRepository clientiRepo, RezervariRepository rezervariRepo) : this()
+        {
+            Configure(camereRepo, clientiRepo, rezervariRepo);
+        }
+
+        public void Configure(CamereRepository camereRepo, ClientiRepository clientiRepo, RezervariRepository rezervariRepo)
+        {
+            _camereRepo = camereRepo;
+            _clientiRepo = clientiRepo;
             _rezervariRepo = rezervariRepo;
         }
 
@@ -26,6 +35,7 @@ namespace HotelReservation.Forms
 
         private void LoadRezervari()
         {
+            if (_rezervariRepo == null) return;
             try
             {
                 LoadRezervariComboBoxes();
@@ -55,6 +65,7 @@ namespace HotelReservation.Forms
 
         private void LoadRezervariComboBoxes()
         {
+            if (_clientiRepo == null || _camereRepo == null) return;
             try
             {
                 var clienti = _clientiRepo.GetAll();

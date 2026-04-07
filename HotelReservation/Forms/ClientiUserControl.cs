@@ -7,13 +7,22 @@ namespace HotelReservation.Forms
 {
     public partial class ClientiUserControl : UserControl
     {
-        private readonly ClientiRepository _clientiRepo;
-        private readonly Action _refreshRezervariCombos;
+        private ClientiRepository _clientiRepo;
+        private Action _refreshRezervariCombos;
         private int _selectedClientId;
 
-        public ClientiUserControl(ClientiRepository clientiRepo, Action refreshRezervariCombos)
+        public ClientiUserControl()
         {
             InitializeComponent();
+        }
+
+        public ClientiUserControl(ClientiRepository clientiRepo, Action refreshRezervariCombos) : this()
+        {
+            Configure(clientiRepo, refreshRezervariCombos);
+        }
+
+        public void Configure(ClientiRepository clientiRepo, Action refreshRezervariCombos)
+        {
             _clientiRepo = clientiRepo;
             _refreshRezervariCombos = refreshRezervariCombos;
         }
@@ -22,6 +31,7 @@ namespace HotelReservation.Forms
 
         private void LoadClienti()
         {
+            if (_clientiRepo == null) return;
             try
             {
                 var list = _clientiRepo.GetAll();

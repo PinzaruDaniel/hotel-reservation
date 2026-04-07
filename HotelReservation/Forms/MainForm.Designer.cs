@@ -22,7 +22,17 @@ namespace HotelReservation.Forms
             this.tabRezervari = new System.Windows.Forms.TabPage();
             this.tabHarta     = new System.Windows.Forms.TabPage();
             this.tabRapoarte  = new System.Windows.Forms.TabPage();
+            this.camereUserControl = new HotelReservation.Forms.CamereUserControl();
+            this.clientiUserControl = new HotelReservation.Forms.ClientiUserControl();
+            this.rezervariUserControl = new HotelReservation.Forms.RezervariUserControl();
+            this.hartaUserControl = new HotelReservation.Forms.HartaUserControl();
+            this.rapoarteUserControl = new HotelReservation.Forms.RapoarteUserControl();
             this.tabMain.SuspendLayout();
+            this.tabCamere.SuspendLayout();
+            this.tabClienti.SuspendLayout();
+            this.tabRezervari.SuspendLayout();
+            this.tabHarta.SuspendLayout();
+            this.tabRapoarte.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -38,27 +48,72 @@ namespace HotelReservation.Forms
             // tabCamere
             // 
             this.tabCamere.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabCamere.Controls.Add(this.camereUserControl);
             this.tabCamere.Text = "🏠 Camere";
             // 
             // tabClienti
             // 
             this.tabClienti.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabClienti.Controls.Add(this.clientiUserControl);
             this.tabClienti.Text = "👤 Clienți";
             // 
             // tabRezervari
             // 
             this.tabRezervari.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabRezervari.Controls.Add(this.rezervariUserControl);
             this.tabRezervari.Text = "📅 Rezervări";
             // 
             // tabHarta
             // 
             this.tabHarta.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabHarta.Controls.Add(this.hartaUserControl);
             this.tabHarta.Text = "🗺️ Hartă Camere";
             // 
             // tabRapoarte
             // 
             this.tabRapoarte.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabRapoarte.Controls.Add(this.rapoarteUserControl);
             this.tabRapoarte.Text = "📊 Rapoarte";
+            // 
+            // camereUserControl
+            // 
+            this.camereUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.camereUserControl.Location = new System.Drawing.Point(3, 3);
+            this.camereUserControl.Name = "camereUserControl";
+            this.camereUserControl.Size = new System.Drawing.Size(1086, 681);
+            this.camereUserControl.TabIndex = 0;
+            // 
+            // clientiUserControl
+            // 
+            this.clientiUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clientiUserControl.Location = new System.Drawing.Point(3, 3);
+            this.clientiUserControl.Name = "clientiUserControl";
+            this.clientiUserControl.Size = new System.Drawing.Size(1086, 681);
+            this.clientiUserControl.TabIndex = 0;
+            // 
+            // rezervariUserControl
+            // 
+            this.rezervariUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rezervariUserControl.Location = new System.Drawing.Point(3, 3);
+            this.rezervariUserControl.Name = "rezervariUserControl";
+            this.rezervariUserControl.Size = new System.Drawing.Size(1086, 681);
+            this.rezervariUserControl.TabIndex = 0;
+            // 
+            // hartaUserControl
+            // 
+            this.hartaUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hartaUserControl.Location = new System.Drawing.Point(3, 3);
+            this.hartaUserControl.Name = "hartaUserControl";
+            this.hartaUserControl.Size = new System.Drawing.Size(1086, 681);
+            this.hartaUserControl.TabIndex = 0;
+            // 
+            // rapoarteUserControl
+            // 
+            this.rapoarteUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rapoarteUserControl.Location = new System.Drawing.Point(3, 3);
+            this.rapoarteUserControl.Name = "rapoarteUserControl";
+            this.rapoarteUserControl.Size = new System.Drawing.Size(1086, 681);
+            this.rapoarteUserControl.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -70,6 +125,11 @@ namespace HotelReservation.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "🏨 Hotel Reservation Management System";
             this.tabMain.ResumeLayout(false);
+            this.tabCamere.ResumeLayout(false);
+            this.tabClienti.ResumeLayout(false);
+            this.tabRezervari.ResumeLayout(false);
+            this.tabHarta.ResumeLayout(false);
+            this.tabRapoarte.ResumeLayout(false);
             this.ResumeLayout(false);
         }
 
@@ -79,6 +139,11 @@ namespace HotelReservation.Forms
         private System.Windows.Forms.TabPage tabRezervari;
         private System.Windows.Forms.TabPage tabHarta;
         private System.Windows.Forms.TabPage tabRapoarte;
+        private CamereUserControl camereUserControl;
+        private ClientiUserControl clientiUserControl;
+        private RezervariUserControl rezervariUserControl;
+        private HartaUserControl hartaUserControl;
+        private RapoarteUserControl rapoarteUserControl;
 
         #endregion
     }

@@ -11,17 +11,27 @@ namespace HotelReservation.Forms
 {
     public partial class RapoarteUserControl : UserControl
     {
-        private readonly RezervariRepository _rezervariRepo;
+        private RezervariRepository _rezervariRepo;
         private List<Rezervare> _lastRaportData = new List<Rezervare>();
 
-        public RapoarteUserControl(RezervariRepository rezervariRepo)
+        public RapoarteUserControl()
         {
             InitializeComponent();
+        }
+
+        public RapoarteUserControl(RezervariRepository rezervariRepo) : this()
+        {
+            Configure(rezervariRepo);
+        }
+
+        public void Configure(RezervariRepository rezervariRepo)
+        {
             _rezervariRepo = rezervariRepo;
         }
 
         private void btnGeneraRaport_Click(object sender, EventArgs e)
         {
+            if (_rezervariRepo == null) return;
             try
             {
                 DateTime start = dtpRaportStart.Value.Date;
