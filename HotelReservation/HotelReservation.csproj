@@ -107,6 +107,18 @@
     <Compile Include="Forms\RapoarteUserControl.Designer.cs">
       <DependentUpon>RapoarteUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Camera.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Rezervare.cs" />
@@ -131,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RapoarteUserControl.resx">
       <DependentUpon>RapoarteUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
