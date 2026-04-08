@@ -5,9 +5,6 @@ namespace HotelReservation.Forms
 {
     public partial class LoginScreen : Form
     {
-        public string Username => txtUsername.Text.Trim();
-        public string Password => txtPassword.Text;
-
         public LoginScreen()
         {
             InitializeComponent();
@@ -15,7 +12,7 @@ namespace HotelReservation.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
+            if (string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 MessageBox.Show("Introduceți utilizator și parolă.", "Validare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
