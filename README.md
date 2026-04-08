@@ -72,6 +72,19 @@ Editati fisierul `HotelReservation/App.config`:
 </connectionStrings>
 ```
 
+Pentru ecranul de autentificare, setati si:
+
+```xml
+<appSettings>
+  <add key="LoginUsername" value="utilizatorul_tau" />
+  <add key="LoginPassword" value="parola_ta" />
+</appSettings>
+```
+
+Alternativ, puteti folosi variabile de mediu:
+- `HOTEL_APP_USERNAME`
+- `HOTEL_APP_PASSWORD`
+
 Inlocuiti `PAROLA_TA` cu parola root MySQL sau creati un user dedicat:
 
 ```sql

@@ -5,12 +5,13 @@ namespace HotelReservation.Forms
 {
     public partial class SplashScreen : Form
     {
-        private readonly Timer _closeTimer = new Timer();
+        private readonly Timer _closeTimer;
 
         public SplashScreen()
         {
             InitializeComponent();
 
+            _closeTimer = new Timer();
             _closeTimer.Interval = 1500;
             _closeTimer.Tick += CloseTimer_Tick;
         }
